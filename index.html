@@ -21,13 +21,14 @@
       }
       const txn = document.getElementById('txn-id').value.trim();
       if (txn) {
-        emailjs.send("service_b2asiyq", "template_0hiq1xr", {
+        emailjs.send("service_b2asiyq", "template_o4539tp", {
           transaction_id: txn,
           user_email: "ksgamingsaga@gmail.com"
         }).then(function(response) {
           alert("✅ Transaction ID " + txn + " submitted and email sent. You're entered in the giveaway!");
         }, function(error) {
           alert("❌ Failed to send email. Please try again.");
+          console.error("EmailJS Error:", error);
         });
       } else {
         alert("❌ Please enter a valid transaction ID.");
